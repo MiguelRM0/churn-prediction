@@ -2,13 +2,10 @@ DROP_COLUMNS =[
     "customerID"
 ]
 
-TARGET_COLUMN = "Churn"
-
-NUMERIC_COLUMNS = [
-    "tenure",
-    "MonthlyCharges",
-    "TotalCharges"
+TARGET_COLUMN = [
+    "Churn"
 ]
+
 
 CATEGORICAL_COLUMNS = [
     "gender",
@@ -27,4 +24,13 @@ CATEGORICAL_COLUMNS = [
     "Contract",
     "PaperlessBilling",
     "PaymentMethod"
+]
+
+INTEGER_COLUMNS = [
+    "tenure"
+]
+
+FLOAT_COLUMNS = [
+    "MonthlyCharges", 
+    "TotalCharges"
 ]
