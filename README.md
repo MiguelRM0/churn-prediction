@@ -8,6 +8,48 @@ predictions and provide **actionable** business insights.
 * **Target Variable:** Churn (Yes/No)
 
 
+
+---
+
+## Environment Separation Philosophy
+
+This project uses **two separate Python environments** by design:
+
+### Research Environment (Conda)
+- Used for:
+  - Data exploration
+  - Feature engineering
+  - Model training and evaluation
+  - Hyperparameter tuning
+- Contains heavier data science dependencies (NumPy, Pandas, Scikit-learn, etc.)
+- Ensures consistent and stable binary dependencies for numerical computing
+
+### Backend Environment (venv)
+- Used for:
+  - Serving predictions via an API
+  - Loading pre-trained models
+- Kept lightweight to reduce complexity and runtime overhead
+- Only includes dependencies required for inference
+
+> **Training and serving are intentionally separated** to prevent dependency conflicts and improve reliability.
+
+---
+
+### Create the Research Environment
+If you do not already have the environment:
+
+```bash
+conda env create -f research/environment.yml
+conda activate churn-research
+```
+
+### Create Virtual Environment
+```bash
+cd Backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 ## Authors and acknowledgment
 by Miguel Romero
 
