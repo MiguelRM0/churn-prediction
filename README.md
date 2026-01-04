@@ -12,4 +12,4 @@ predictions and provide **actionable** business insights.
 by Miguel Romero
 
 ## Project status
-**Active:** The core EDA is complete. Currently modeling going to refine for final report. 
+**Active:** Want to extend the explainability of the features and there importance. Want make a simple website where you can enter a observation and it makes a prediction. This will be built with simple HTML,CSS along with a REST API(FAST API). 
