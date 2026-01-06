@@ -1,4 +1,45 @@
 import pandas as pd
+from src.config import DROP_COLUMNS
 
-def load_churn_data(path: str) -> pd.DataFrame:
-    return pd.read_csv(path)
+def load_churn_data(path: str, dropna: bool = True, dropcol: bool=True) -> pd.DataFrame:
+    """
+    Loads the Telco Churn dataset from a CSV file and performs initial cleaning.
+
+    This function serves as the entry point for the data pipeline, handling 
+    the transition from a raw local file to a memory-optimized DataFrame.
+
+    Args:
+        path (str): The absolute or relative system path to the raw CSV file.
+        dropna (bool): If True, removes rows with missing values (TotalCharges). 
+            Defaults to True.
+        dropcol (bool): If True, removes non-informative columns defined in 
+            config.DROP_COLUMNS (e.g., customerID). Defaults to True.
+
+    Returns:
+        pd.DataFrame: A cleaned and filtered Pandas DataFrame ready for 
+            further preprocessing or exploratory data analysis.
+            
+    Raises:
+        FileNotFoundError: If the provided path does not exist.
+    """
+    df = pd.read_csv(path)
+    if dropna:
+        df= drop_na_values(df)
+    if dropcol:
+        df = drop_columns(df)
+    return df
+
+def drop_na_values(df: pd.DataFrame):
+    df = df.copy()
+    df.dropna(inplace=True)
+    df.reset_index(drop=True, inplace=True)
+    return df
+
+def drop_columns(df: pd.DataFrame):
+
+    df = df.copy()
+    for column in DROP_COLUMNS:
+        if column in df.columns:
+            df.drop(column, axis=1, inplace=True)
+    return df 
+

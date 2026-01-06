@@ -1,14 +1,7 @@
 import pandas as pd
 from src.data.load_data import load_churn_data
-from src.config import DROP_COLUMNS, TARGET_COLUMN,CATEGORICAL_COLUMNS, INTEGER_COLUMNS, FLOAT_COLUMNS
+from src.config import TARGET_COLUMN,CATEGORICAL_COLUMNS, INTEGER_COLUMNS, FLOAT_COLUMNS
 
-
-def drop_columns(df: pd.DataFrame):
-    df = df.copy()
-    for column in DROP_COLUMNS:
-        if column in df.columns:
-            df.drop(column, axis=1, inplace=True)
-    return df 
 
 
 def categories(df: pd.DataFrame):
@@ -31,18 +24,15 @@ def downcasting(df: pd.DataFrame):
     return df
 
 
-def drop_na_values(df: pd.DataFrame):
-    df = df.copy()
-    df.dropna(inplace=True)
-    df.reset_index(drop=True, inplace=True)
-    return df
 
 def main():
     df = load_churn_data("/Users/miguelromero/Documents/Projects/churn-prediction/data/WA_Fn-UseC_-Telco-Customer-Churn.csv")
-    df = drop_columns(df)
-    df = drop_na_values(df)
-    df =categories(df)
+    df = categories(df)
     df = downcasting(df)
-    print(df.info())
 
-main()
+    df.to_csv("data/cleaned_churn.csv", index=False)
+    print("✅ Stage 1 Complete: Cleaned data saved to data/cleaned_churn.csv")
+
+
+if __name__ == "__main__":
+    main()

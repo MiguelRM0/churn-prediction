@@ -6,7 +6,6 @@ TARGET_COLUMN = [
     "Churn"
 ]
 
-
 CATEGORICAL_COLUMNS = [
     "gender",
     "SeniorCitizen",
