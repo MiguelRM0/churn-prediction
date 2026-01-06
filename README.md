@@ -39,7 +39,7 @@ This project uses **two separate Python environments** by design:
 If you do not already have the environment:
 
 ```bash
-conda env create -f research/environment.yml
+conda env create -f notebooks/environment.yml
 conda activate churn-research
 ```
 
@@ -54,4 +54,4 @@ pip install -r requirements.txt
 by Miguel Romero
 
 ## Project status
-**Active:** Want to extend the explainability of the features and there importance. Want make a simple website where you can enter a observation and it makes a prediction. This will be built with simple HTML,CSS along with a REST API(FAST API). 
+**Active:** Want extract notebook code into a pipeline to create a model. Want make a simple website where you can enter a observation and it makes a prediction. This will be built with simple HTML,CSS along with a REST API(FAST API). 

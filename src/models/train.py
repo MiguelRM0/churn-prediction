@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import FunctionTransformer
 from sklearn.linear_model import LogisticRegression
-from src.data.preprocess import downcasting, categories 
+from src.data.clean import downcasting, categories 
 from src.config import CATEGORICAL_COLUMNS, FLOAT_COLUMNS, INTEGER_COLUMNS
 
 

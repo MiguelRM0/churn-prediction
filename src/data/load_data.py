@@ -10,10 +10,8 @@ def load_churn_data(path: str, dropna: bool = True, dropcol: bool=True) -> pd.Da
 
     Args:
         path (str): The absolute or relative system path to the raw CSV file.
-        dropna (bool): If True, removes rows with missing values (TotalCharges). 
-            Defaults to True.
-        dropcol (bool): If True, removes non-informative columns defined in 
-            config.DROP_COLUMNS (e.g., customerID). Defaults to True.
+        dropna (bool): (Defualt = True)If True, removes rows with missing values 
+        dropcol (bool): (Defualt = True) If True, removes non-informative columns defined in config.DROP_COLUMNS .
 
     Returns:
         pd.DataFrame: A cleaned and filtered Pandas DataFrame ready for 

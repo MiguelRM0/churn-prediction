@@ -31,7 +31,7 @@ def main():
     df = downcasting(df)
 
     df.to_csv("data/cleaned_churn.csv", index=False)
-    print("✅ Stage 1 Complete: Cleaned data saved to data/cleaned_churn.csv")
+    print("Stage 1 Complete: Cleaned data saved to data/cleaned_churn.csv")
 
 
 if __name__ == "__main__":
