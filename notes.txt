@@ -1,0 +1,4 @@
+Helpful PostgreSQL commands: pgdata is the database cluster
+pg_ctl -D pgdata status
+pg_ctl -D pgdata start
+pg_ctl -D pgdata stop

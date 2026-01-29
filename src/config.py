@@ -2,7 +2,7 @@ DROP_COLUMNS =[
     "customerID"
 ]
 
-TARGET_COLUMN = [
+TARGET_COLUMNS= [
     "Churn"
 ]
 

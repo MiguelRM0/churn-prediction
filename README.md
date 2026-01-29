@@ -8,7 +8,6 @@ predictions and provide **actionable** business insights.
 * **Target Variable:** Churn (Yes/No)
 
 
-
 ---
 
 ## Environment Separation Philosophy
@@ -31,7 +30,7 @@ This project uses **two separate Python environments** by design:
 - Kept lightweight to reduce complexity and runtime overhead
 - Only includes dependencies required for inference
 
-> **Training and serving are intentionally separated** to prevent dependency conflicts and improve reliability.
+**Training and serving are intentionally separated** to prevent dependency conflicts and improve reliability.
 
 ---
 
@@ -55,3 +54,4 @@ by Miguel Romero
 
 ## Project status
 **Active:** Want extract notebook code into a pipeline to create a model. Want make a simple website where you can enter a observation and it makes a prediction. This will be built with simple HTML,CSS along with a REST API(FAST API). 
+

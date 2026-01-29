@@ -1,12 +1,12 @@
 import pandas as pd
-from src.data.load_data import load_churn_data
-from src.config import TARGET_COLUMN,CATEGORICAL_COLUMNS, INTEGER_COLUMNS, FLOAT_COLUMNS
+from src.data.read_data import load_churn_data
+from src.config import TARGET_COLUMNS,CATEGORICAL_COLUMNS, INTEGER_COLUMNS, FLOAT_COLUMNS
 
 
 
 def categories(df: pd.DataFrame):
     df = df.copy()
-    for column in CATEGORICAL_COLUMNS + TARGET_COLUMN:
+    for column in CATEGORICAL_COLUMNS + TARGET_COLUMNS:
         if column in df.columns:
             df[column] = pd.Categorical(df[column])
     return df

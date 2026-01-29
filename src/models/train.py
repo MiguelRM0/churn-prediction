@@ -12,7 +12,7 @@ from src.config import CATEGORICAL_COLUMNS, FLOAT_COLUMNS, INTEGER_COLUMNS
 pandas_cleaning_step = FunctionTransformer(downcasting, validate=False)
 category_step = FunctionTransformer(categories, validate=False)
 
-# --- STEP 2: Define Mathematical Transformations ---
+
 numeric_features = FLOAT_COLUMNS + INTEGER_COLUMNS
 
 # Create the transformer for math
