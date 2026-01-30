@@ -1,71 +1,98 @@
-## Customer Churn Prediction
-This project will go in depth in to creating a model to predict customer retention rate on a service. The primary goal isto identify high-risk customers before they leave, enabling the business to deploy targeted, proactive retention strategies.
+# Customer Churn Analytics Platform
 
-## Description
-This project addresses a classic supervised **binary classification problem**. This solution leverages **multiple models** along with meticulous **hyperparameter tuning** to create an interpretable **machine learning** model to achieve high-accuracy
-predictions and provide **actionable** business insights. 
-* **Reference Data Source:** https://www.kaggle.com/datasets/blastchar/telco-customer-churn
-* **Target Variable:** Churn (Yes/No)
+This project focuses on building an **end-to-end data and analytics system** to analyze and predict customer churn in a subscription-based service. The primary goal is to identify high-risk customers before they leave, enabling the business to deploy **targeted, proactive retention strategies**.
 
+While the project began as a traditional machine learning task, it has evolved into a **full data pipeline and backend-driven analytics platform**, integrating data engineering, backend development, and applied machine learning.
+
+---
+
+## Project Overview
+
+This project addresses a classic **supervised binary classification problem** (`Churn: Yes / No`) using real-world telecom customer data. Multiple models are explored and evaluated, with a focus on **interpretability**, **robust evaluation**, and **business usability**.
+
+Beyond modeling, the project emphasizes:
+- Data cleaning and transformation
+- Relational data storage in PostgreSQL
+- API-based access to data via FastAPI
+- A simple frontend interface for querying and exploration
+
+**Reference Dataset:**  
+https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+
+**Target Variable:**  
+`Churn (Yes / No)`
+
+---
+
+## Key Features
+
+### Data Engineering
+- Cleaned and transformed raw telecom customer data using Pandas
+- Normalized categorical features and validated schema consistency
+- Loaded processed data into a **local PostgreSQL database**
+- Verified data integrity through SQL-based validation queries
+
+### Backend Development
+- Built a **FastAPI backend** to expose REST endpoints for querying PostgreSQL
+- Implemented database queries and returned structured JSON responses
+- Served static frontend assets (HTML, CSS, JavaScript) directly from the API
+- Designed endpoints to support incremental expansion toward analytics and inference
+
+### Frontend (Learning-Oriented)
+- Developed a minimal web interface using vanilla HTML, CSS, and JavaScript
+- Used the Fetch API to retrieve live data from backend endpoints
+- Displayed query results dynamically in the browser for improved usability
+- Focused on learning fundamentals rather than frameworks
+
+### Machine Learning
+- Conducted exploratory data analysis to identify churn drivers (e.g., contract type, monthly charges)
+- Trained and evaluated multiple models using **Stratified K-Fold Cross-Validation**
+- Addressed class imbalance with weighted loss functions
+- Optimized performance using **F1-Macro**
+- Selected **Logistic Regression** for interpretability and business relevance
 
 ---
 
 ## Environment Separation Philosophy
 
-This project uses **two separate Python environments** by design:
+This project intentionally uses **two separate Python environments** to reflect real-world production practices.
 
 ### Research Environment (Conda)
-- Used for:
-  - Data exploration
-  - Feature engineering
-  - Model training and evaluation
-  - Hyperparameter tuning
-- Contains heavier data science dependencies (NumPy, Pandas, Scikit-learn, etc.)
-- Ensures consistent and stable binary dependencies for numerical computing
+Used for:
+- Exploratory data analysis (EDA)
+- Feature engineering
+- Model training and evaluation
+- Hyperparameter tuning
 
-### Backend Environment (venv)
-- Used for:
-  - Serving predictions via an API
-  - Loading pre-trained models
-- Kept lightweight to reduce complexity and runtime overhead
-- Only includes dependencies required for inference
+Includes heavier data science dependencies:
+- NumPy
+- Pandas
+- Scikit-learn
 
-**Training and serving are intentionally separated** to prevent dependency conflicts and improve reliability.
+This environment ensures stable numerical and scientific computing dependencies.
 
 ---
 
+### Backend Environment (venv)
+Used for:
+- Serving data and analytics via API
+- Querying PostgreSQL
+- (Future) model inference
+
+This environment is kept lightweight to:
+- Reduce dependency conflicts
+- Improve reliability
+- Mirror production-style deployment constraints
+
+**Training and serving are intentionally separated** to prevent dependency issues and enforce clean system boundaries.
+
+---
+
+## Environment Setup
+
 ### Create the Research Environment
-If you do not already have the environment:
+If not already created:
 
 ```bash
 conda env create -f notebooks/environment.yml
 conda activate churn-research
-```
-
-### Create Virtual Environment
-```bash
-cd Backend
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-## Authors and acknowledgment
-by Miguel Romero
-
-## Project status
-**Active:** 
-Have been able to set up a cleaned, and Transformed Database onto a local PostgreSQL data base and did simple Querying. 
-Current Problem: Querying in the terminal sucks 
-Out of wanting to learn more about development(FASTAPI, HTML,CSS,JavaScript), I want to create a very simple website to query this data where it will look better(hopefull)
-
-Last Task Completed: The SQL query
-        SELECT table_name
-        FROM information_schema.tables
-        WHERE table_schema = 'public';  
-        is able to be viewed in the results box of the HTML page when clicking submit
-
-Next Task to Complete: Add more possible quieries, connect in the textbox somehow, make querying much more sandbox like. 
-
-This is has been pushed off at the momement: 
-Want extract notebook code into a pipeline to create a model. Want make a simple website where you can enter a observation and it makes a prediction. This will be built with simple HTML,CSS along with a REST API(FAST API). 
-
