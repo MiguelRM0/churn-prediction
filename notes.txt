@@ -8,15 +8,17 @@ How to run a python file
 Ex.
     python -m src.data.load_db
 
-
+-- 
 in Backend to run FastAPI
 uvicorn main:app --reload
+-- 
 
-
+---
 FASTAPI is my server 
 "my laptop is now a web server"
+---
 
-
+----
 Mental Model to Keep Forever
 
 Routes handle logic.
@@ -31,3 +33,4 @@ Handles many requests
 Shouldn’t mix with business logic
 
 ➡️ It probably gets mounted.
+----

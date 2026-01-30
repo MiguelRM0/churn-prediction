@@ -12,7 +12,6 @@ app = FastAPI()
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_DIR = BASE_DIR / "Frontend" / "static"
 
-print("Serving static files from:", STATIC_DIR)
 
 app.mount(
     "/static", # the url path
