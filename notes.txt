@@ -8,3 +8,6 @@ How to run a python file
 Ex.
     python -m src.data.load_db
 
+
+in Backend to run FastAPI
+uvicorn main:app --reload

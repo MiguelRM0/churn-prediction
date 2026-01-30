@@ -1,7 +1,7 @@
 import pandas as pd
 import sqlalchemy as db
-from src.data.clean import categories, downcasting
-from src.data.read_data import load_churn_data
+from ETL.data.clean import categories, downcasting
+from ETL.data.read_data import load_churn_data
 # Testing Loading data into postgressSQL local database
 # WIll be loading in cleaned data but plan to pipeline process
 def main():

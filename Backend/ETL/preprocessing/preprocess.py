@@ -1,5 +1,5 @@
 import pandas as pd
-from src.config import CATEGORICAL_COLUMNS, INTEGER_COLUMNS, FLOAT_COLUMNS
+from ETL.config import CATEGORICAL_COLUMNS, INTEGER_COLUMNS, FLOAT_COLUMNS
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 from typing import Tuple

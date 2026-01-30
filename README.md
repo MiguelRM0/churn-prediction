@@ -53,5 +53,11 @@ pip install -r requirements.txt
 by Miguel Romero
 
 ## Project status
-**Active:** Want extract notebook code into a pipeline to create a model. Want make a simple website where you can enter a observation and it makes a prediction. This will be built with simple HTML,CSS along with a REST API(FAST API). 
+**Active:** 
+Have been able to set up a cleaned, and Transformed Database onto a local PostgreSQL data base and did simple Querying. 
+Current Problem: Querying in the terminal sucks 
+Out of wanting to learn more about development(FASTAPI, HTML,CSS,JavaScript), I want to create a very simple website to query this data where it will look better(hopefull)
+
+This is has been pushed off at the momement: 
+Want extract notebook code into a pipeline to create a model. Want make a simple website where you can enter a observation and it makes a prediction. This will be built with simple HTML,CSS along with a REST API(FAST API). 
 
