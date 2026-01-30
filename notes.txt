@@ -1,4 +1,10 @@
 Helpful PostgreSQL commands: pgdata is the database cluster
-pg_ctl -D pgdata status
-pg_ctl -D pgdata start
-pg_ctl -D pgdata stop
+pg_ctl -D ~/pgdata status
+pg_ctl -D ~/pgdata start
+pg_ctl -D ~/pgdata stop
+
+
+How to run a python file
+Ex.
+    python -m src.data.load_db
+

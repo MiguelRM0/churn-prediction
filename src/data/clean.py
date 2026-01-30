@@ -4,7 +4,7 @@ from src.config import TARGET_COLUMNS,CATEGORICAL_COLUMNS, INTEGER_COLUMNS, FLOA
 
 
 
-def categories(df: pd.DataFrame):
+def categories(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     for column in CATEGORICAL_COLUMNS + TARGET_COLUMNS:
         if column in df.columns:
@@ -12,7 +12,7 @@ def categories(df: pd.DataFrame):
     return df
 
 
-def downcasting(df: pd.DataFrame):
+def downcasting(df: pd.DataFrame) -> pd.DataFrame: 
     df = df.copy()
     for col in INTEGER_COLUMNS:
         if col in df.columns:

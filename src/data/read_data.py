@@ -27,14 +27,13 @@ def load_churn_data(path: str, dropna: bool = True, dropcol: bool=True) -> pd.Da
         df = drop_columns(df)
     return df
 
-def drop_na_values(df: pd.DataFrame):
+def drop_na_values(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     df.dropna(inplace=True)
     df.reset_index(drop=True, inplace=True)
     return df
 
-def drop_columns(df: pd.DataFrame):
-
+def drop_columns(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     for column in DROP_COLUMNS:
         if column in df.columns:
