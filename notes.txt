@@ -11,3 +11,23 @@ Ex.
 
 in Backend to run FastAPI
 uvicorn main:app --reload
+
+
+FASTAPI is my server 
+"my laptop is now a web server"
+
+
+Mental Model to Keep Forever
+
+Routes handle logic.
+Mounted apps handle responsibilities.
+
+If something:
+
+Has its own job
+
+Handles many requests
+
+Shouldn’t mix with business logic
+
+➡️ It probably gets mounted.
