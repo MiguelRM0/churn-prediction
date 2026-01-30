@@ -6,6 +6,9 @@ from fastapi.responses import HTMLResponse
 from pathlib import Path
 
 
+from .queries import list_tables
+
+
 
 app = FastAPI()
 
@@ -30,6 +33,10 @@ def api_root():
 def hello():
     return {"message": "Hello World"}
 
+
+@app.get("/api/tables")
+def get_tables():
+    return list_tables()
 
 @app.get("/api/summary")
 def get_count():
