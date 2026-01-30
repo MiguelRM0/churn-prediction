@@ -58,6 +58,14 @@ Have been able to set up a cleaned, and Transformed Database onto a local Postgr
 Current Problem: Querying in the terminal sucks 
 Out of wanting to learn more about development(FASTAPI, HTML,CSS,JavaScript), I want to create a very simple website to query this data where it will look better(hopefull)
 
+Last Task Completed: The SQL query
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = 'public';  
+        is able to be viewed in the results box of the HTML page when clicking submit
+
+Next Task to Complete: Add more possible quieries, connect in the textbox somehow, make querying much more sandbox like. 
+
 This is has been pushed off at the momement: 
 Want extract notebook code into a pipeline to create a model. Want make a simple website where you can enter a observation and it makes a prediction. This will be built with simple HTML,CSS along with a REST API(FAST API). 
 
