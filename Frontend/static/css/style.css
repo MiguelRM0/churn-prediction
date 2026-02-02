@@ -69,12 +69,44 @@ button:active {
 }
 
 #result {
-    max-width: 600px;
-    margin: 20px auto;
+    width: 95%;
+    max-width: 1400px;
+    margin: 30px auto;
     padding: 15px;
     background-color: #2d2d2d;
     border-radius: 4px;
     border-left: 4px solid #007bff;
     min-height: 50px;
     color: #e0e0e0;
+    overflow-x: auto; /* Allows horizontal scrolling if table is too wide */
 }
+
+.sql-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+}
+
+.sql-table th,
+.sql-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+    max-width: 300px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.sql-table th {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.sql-table tr:hover {
+    background-color: #404040;
+}
+
+

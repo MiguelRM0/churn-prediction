@@ -17,3 +17,16 @@ def list_tables():
     conn.close()
 
     return rows
+
+
+def execute_query(query):
+    conn = get_connection()
+    cur = conn.cursor()
+
+    cur.execute(query)
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return rows

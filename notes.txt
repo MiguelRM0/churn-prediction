@@ -34,3 +34,12 @@ Shouldn’t mix with business logic
 
 ➡️ It probably gets mounted.
 ----
+
+-----
+Running It:
+Start PostgreSQL: pg_ctl -D ~/pgdata start
+Run backend: cd backend && uvicorn main:app --reload
+Frontend accessible at http://localhost:8000/
+-----
+
+

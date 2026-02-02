@@ -6,7 +6,7 @@ queries to get quieries for my database. In order for this to work PostgreSQL se
 '''
 
 
-
+# Function to get a connection to the PostgreSQL database
 def get_connection():
     return psycopg2.connect(
         host='localhost',
