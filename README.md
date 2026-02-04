@@ -90,9 +90,65 @@ This environment is kept lightweight to:
 
 ## Environment Setup
 
-### Create the Research Environment
-If not already created:
+### Docker (Backend API — Current Setup)
+The backend API is containerized. The database is **still local for now** and will be
+dockerized later.
+
+1. Create a `.env` file (or copy `.env.example`) and set these values:
+
+```bash
+DB_HOST=host.docker.internal
+DB_NAME=churn_data
+DB_USER=your_user
+DB_PASSWORD=your_password
+DB_PORT=5432
+API_PORT=8000
+```
+
+2. Build the image from the project root:
+
+```bash
+docker build -t churn-backend -f backend/Dockerfile .
+```
+
+3. Run the container:
+
+```bash
+docker run --rm -p 8000:8000 --env-file .env churn-backend
+```
+
+4. Open the app at `http://localhost:8000`.
+
+**Note:** `host.docker.internal` works on macOS/Windows to reach the host database.
+On Linux, use your host IP or Docker's host gateway.
+
+---
+
+### Research Environment (Conda)
+Used for EDA and model training.
 
 ```bash
 conda env create -f notebooks/environment.yml
 conda activate churn-research
+```
+
+---
+
+### Backend Environment (Local venv)
+If you prefer running the API locally without Docker:
+
+```bash
+python -m venv backend/venv
+source backend/venv/bin/activate
+pip install -r backend/requirements.txt
+uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+Make sure your `.env` file is present so the API can connect to PostgreSQL.
+
+---
+
+## Planned: Dockerized Database
+The PostgreSQL database is currently running on the host machine. A Dockerized DB
+setup (likely via `docker-compose`) is planned next so the API and DB can run
+entirely in containers.
