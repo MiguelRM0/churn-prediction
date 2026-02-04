@@ -42,4 +42,6 @@ Run backend: cd backend && uvicorn main:app --reload
 Frontend accessible at http://localhost:8000/
 -----
 
+git rm -r --cached <file.txt> 
+to stop git from tracking a file and be able to add it to .gitignore
 

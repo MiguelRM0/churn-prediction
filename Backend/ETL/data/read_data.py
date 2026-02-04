@@ -1,5 +1,5 @@
 import pandas as pd
-from ETL.config import DROP_COLUMNS
+from backend.ETL.config import DROP_COLUMNS
 
 def load_churn_data(path: str, dropna: bool = True, dropcol: bool=True) -> pd.DataFrame:
     """

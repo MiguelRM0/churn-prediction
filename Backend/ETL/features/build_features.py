@@ -1,4 +1,4 @@
-from ETL.config import TARGET_COLUMNS
+from backend.ETL.config import TARGET_COLUMNS
 import pandas as pd
 
 def build_features(df: pd.DataFrame):

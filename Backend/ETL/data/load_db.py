@@ -1,25 +1,27 @@
 import pandas as pd
 import sqlalchemy as db
-from ETL.data.clean import categories, downcasting
-from ETL.data.read_data import load_churn_data
-# Testing Loading data into postgressSQL local database
+from backend.ETL.data.clean import categories, downcasting
+from backend.ETL.data.read_data import load_churn_data
+import os 
+from dotenv import load_dotenv
+
 # WIll be loading in cleaned data but plan to pipeline process
 def main():
-    print("Hello World")
-    df = load_churn_data("data/WA_Fn-UseC_-Telco-Customer-Churn.csv")
+    df = load_churn_data("raw data/WA_Fn-UseC_-Telco-Customer-Churn.csv", dropna=True, dropcol=True)
     df = categories(df)
     df = downcasting(df)
     # print(df.info())
+    load_dotenv()
 
 
-    engine = db.create_engine("postgresql+psycopg2://miguelromero@localhost:5432/churn-data")
+    engine = db.create_engine(os.getenv("DATABASE_URL"))
     df.to_sql(
-        name = "churn-data",
+        name = os.getenv("DB_NAME"),
         con = engine,
         if_exists="replace",
         index = False
     )
-    
+    print(f"Data loaded successfully into the database. URL used: {os.getenv('DATABASE_URL')}). Database_name: {os.getenv('DB_NAME')}" )
 
 
 main()

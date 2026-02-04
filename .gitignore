@@ -1,9 +1,9 @@
 venv/
 .venv/
 __pycache__/
+*.pyc
 .idea/
 .DS_Store
 .vscode
 .env
 notes.txt
-.DS_Store
