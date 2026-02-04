@@ -13,7 +13,7 @@ from .queries import list_tables, execute_query
 app = FastAPI()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-STATIC_DIR = BASE_DIR / "Frontend" / "static"
+STATIC_DIR = BASE_DIR / "frontend" / "static"
 
 # Mount the static files directory
 app.mount(
@@ -25,7 +25,7 @@ app.mount(
 # Serve the index.html at the root endpoint
 @app.get("/", response_class=HTMLResponse)
 def api_root():
-    with open("Frontend/static/index.html") as f:
+    with open("frontend/static/index.html") as f:
         return f.read()
 
 ## Basic hello world endpoint
