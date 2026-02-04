@@ -9,8 +9,5 @@ __pycache__
 *.pyo
 *.pyd
 *.ipynb
-<<<<<<< ours
 .gitignore
 .env
-=======
->>>>>>> theirs

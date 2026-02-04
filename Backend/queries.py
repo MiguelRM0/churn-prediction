@@ -1,5 +1,5 @@
 from .db import get_connection # Look at db.py
-
+import pandas as pd 
 
 def list_tables():
     conn = get_connection()
@@ -25,6 +25,8 @@ def execute_query(query):
 
     cur.execute(query)
     rows = cur.fetchall()
+    df = pd.DataFrame(rows)
+    print(df.info())
 
     cur.close()
     conn.close()
