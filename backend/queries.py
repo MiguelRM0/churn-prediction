@@ -1,4 +1,4 @@
-from .db import get_connection # Look at db.py
+from db import get_connection # Look at db.py
 import pandas as pd 
 
 def list_tables():

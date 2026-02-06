@@ -1,6 +1,6 @@
 import pandas as pd
-from backend.ETL.data.read_data import load_churn_data
-from backend.ETL.config import TARGET_COLUMNS,CATEGORICAL_COLUMNS, INTEGER_COLUMNS, FLOAT_COLUMNS
+from ETL.data.read_data import load_churn_data
+from ETL.config import TARGET_COLUMNS,CATEGORICAL_COLUMNS, INTEGER_COLUMNS, FLOAT_COLUMNS
 
 
 

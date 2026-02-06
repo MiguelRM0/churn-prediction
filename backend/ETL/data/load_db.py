@@ -1,7 +1,7 @@
 import pandas as pd
 import sqlalchemy as db
-from backend.ETL.data.clean import categories, downcasting
-from backend.ETL.data.read_data import load_churn_data
+from ETL.data.clean import categories, downcasting
+from ETL.data.read_data import load_churn_data
 import os 
 from dotenv import load_dotenv
 

@@ -2,13 +2,13 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY backend/requirements.txt /app/requirements.txt
+COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
-COPY backend /app/backend
+COPY . /app
 
 EXPOSE 8000
 
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0" ,"--port", "8000", "--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0" ,"--port", "8000", "--reload"]
 
 # If we didnt add --host 0.0.0.0 the contianer would runs but we would not be able to reach it. 

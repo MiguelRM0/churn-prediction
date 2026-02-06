@@ -4,8 +4,8 @@ from fastapi import Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from pathlib import Path
-from backend.schemas.sqlquery import SQLQuery
-from .queries import list_tables, execute_query
+from schemas.sqlquery import SQLQuery
+from queries import list_tables, execute_query
 
 
 
