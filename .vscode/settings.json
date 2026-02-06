@@ -1,7 +1,0 @@
-{
-    "explorer.excludeGitIgnore": false,
-    "search.useGlobalIgnoreFiles": true,
-    "python.defaultInterpreterPath": "/Users/miguelromero/anaconda3/envs/churn-research/bin/python",
-    "python.terminal.activateEnvironment": true,
-    "livePreview.defaultPreviewPath": "/Frontend/static/index.html",
-}
