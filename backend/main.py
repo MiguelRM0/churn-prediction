@@ -6,10 +6,18 @@ from fastapi.responses import HTMLResponse
 from pathlib import Path
 from schemas.sqlquery import SQLQuery
 from queries import list_tables, execute_query
+from fastapi.middleware.cors import CORSMiddleware
 
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_methods=["*"],
+    allow_headers=['*']
+)
 
 
 # Serve the index.html at the root endpoint
@@ -33,6 +41,10 @@ def get_count():
         "churn_rate": 0.27
     }
 
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 
 @app.post("/api/query")
 def run_query(sql_query: SQLQuery):
@@ -42,3 +54,11 @@ def run_query(sql_query: SQLQuery):
         return {"results": results}
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.post("/query")
+def query_page(req: SQLQuery):
+    return {
+        "recieved_query": req.query,
+        "message": "Query recieved successfully"
+    }
