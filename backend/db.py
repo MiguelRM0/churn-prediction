@@ -15,7 +15,7 @@ def get_connection():
         host=os.getenv("DB_HOST"),
         dbname=os.getenv("DB_NAME"),
         user=os.getenv("DB_USER"),
-        password=None,  # It's generally not recommended to hardcode passwords, consider using environment variables
+        password=os.getenv("DB_PASSWORD"),
         cursor_factory=RealDictCursor
     )
 

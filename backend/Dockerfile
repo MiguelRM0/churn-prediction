@@ -8,8 +8,8 @@ RUN pip install --no-cache-dir -r /api/requirements.txt
 
 COPY . /api/
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0" ,"--port", "8000", "--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0" ,"--port", "8080", "--reload"]
 
-# If we didnt add --host 0.0.0.0 the contianer would runs but we would not be able to reach it. 
+# If we didnt add --host 0.0.0.0 the contianer would runs but we would not be able to reach it.

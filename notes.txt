@@ -45,3 +45,8 @@ Frontend accessible at http://localhost:8000/
 git rm -r --cached <file.txt> 
 to stop git from tracking a file and be able to add it to .gitignore
 
+## ssh into container terminal 
+docker exec -it churn_backend bash
+
+## connect to psql 
+docker exec -it my_postgres psql -U miguelromero -d churn_data

@@ -25,8 +25,8 @@ def execute_query(query):
 
     cur.execute(query)
     rows = cur.fetchall()
-    df = pd.DataFrame(rows)
-    print(df.info())
+    # df = pd.DataFrame(rows)
+    # print(df.info())
 
     cur.close()
     conn.close()
